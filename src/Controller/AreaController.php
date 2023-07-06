@@ -11,26 +11,26 @@ use Symfony\Component\Routing\Annotation\Route;
 class AreaController extends AbstractController
 {
 
-//     #[Route('/area/new', name: 'new_area')]
-//     public function new(Request $request, AreaRepository $repo): Response
-//     {
-//         $area = new Area;
-//
-//         $form = $this->createForm(AreaType::class, $area);
-//
-//         $form->handleRequest($request);
-//
-//         if ($form->isSubmitted() && $form->isValid()) {
-//             $area = $form->getData();
-//             $repo->save($area, true);
-//
-//             return $this->redirectToRoute('list_area');
-//         }
-//
-//         return $this->render('area/new.html.twig', [
-//             'form' => $form->createView(),
-//         ]);
-//     }
+     #[Route('/area/new', name: 'new_area')]
+     public function new(Request $request, AreaRepository $repo): Response
+     {
+         $area = new Area;
+
+         $form = $this->createForm(AreaType::class, $area);
+
+         $form->handleRequest($request);
+
+         if ($form->isSubmitted() && $form->isValid()) {
+             $area = $form->getData();
+             $repo->save($area, true);
+
+             return $this->redirectToRoute('list_area');
+         }
+
+         return $this->render('area/new.html.twig', [
+             'form' => $form->createView(),
+         ]);
+     }
 
     #[Route('/area', name: 'list_area')]
     public function listAll(AreaRepository $repo): Response
