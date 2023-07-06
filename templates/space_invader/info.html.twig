@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AreaController!
+{% endblock %}
+
+{% block body %}
+	<a href='/area'>Back to area list</a>
+
+	<div>
+		<h1>{{spaceInvader.name}}</h1>
+		<h2>
+			<a href='/area/{{spaceInvader.area.code}}'>{{spaceInvader.area.name}}</a>
+		</h2>
+
+		{% if spaceInvader.imgSrc %}
+			<img src='/uploads/images/si/{{spaceInvader.imgSrc}}' alt='{{spaceInvader.name}} mosaic'>
+		{% else %}
+			<p>No picture of this SI...</p>
+		{% endif %}
+
+		<p>Status:
+			{{spaceInvader.status}}</p>
+
+		{% if spaceInvader.comments %}
+			<h6>Informations</h6>
+			{{spaceInvader.comments}}:
+		{% else %}
+			<p>No information yet...</p>
+		{% endif %}
+
+	</div>
+{% endblock %}

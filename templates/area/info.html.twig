@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AreaController!
+{% endblock %}
+
+{% block body %}
+	<div>
+		<a href='/area'>Back to area list</a>
+
+		<h1>{{area.name}}</h1>
+		<h2>{{area.code}}</h2>
+
+		<p>Nb of Space Invaders :
+			{{area.spaceInvaders|length}}
+		</p>
+
+		{% if area.spaceInvaders|length > 0 %}
+			<table>
+				<thead>
+					<tr>
+						<th>img</th>
+						<th>Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for spaceInvader in area.spaceInvaders %}
+						<tr>
+							<td>
+								<a href='/si/{{spaceInvader.name}}'>
+									{% if spaceInvader.imgSrc %}
+										<img src='/uploads/images/si/{{spaceInvader.imgSrc}}' alt='{{spaceInvader.name}} mosaic'>
+									{% else %}
+										<div>(no picture)</div>
+									{% endif %}
+								</a>
+							</td>
+							<td>
+								<a href='/si/{{spaceInvader.name}}'>
+									{{spaceInvader.name}}
+								</a>
+							</td>
+							<td>{{spaceInvader.status}}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<p>There is no SI in
+				{{area.name}}...</p>
+		{% endif %}
+
+	</div>
+{% endblock %}

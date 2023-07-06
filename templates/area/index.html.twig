@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AreaController!
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h1>Areas</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Area (code)</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% if areas|length > 0 %}
+					{% for area in areas %}
+						<tr>
+							<td>
+								<a href='/area/{{area.code}}'>{{ area.name}}
+									({{area.code}})</a>
+								{# <input type='button' value='Delete'/></li> #}
+							</td>
+						</tr>
+					{% endfor %}
+				{% else %}
+					<p>There is no area yet !</p>
+				{% endif %}
+			</tbody>
+		</table>
+
+		{# <a href='/area/new'>Add new area</a> #}
+	</div>
+{% endblock %}

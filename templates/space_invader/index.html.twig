@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SpaceInvaderController!
+{% endblock %}
+
+{% block body %}
+	<div>
+		<h1>Space Invaders</h1>
+
+		<ul>
+			{% if spaceInvaders|length > 0 %}
+				{% for spaceInvader in spaceInvaders %}
+					<li>
+						<a href='/si/{{spaceInvader.name}}'>
+							<div>
+								<img src='/assets/images/si/{{spaceInvader.imgSrc}}' alt='{{spaceInvader.name}} mosaic'>
+								{{spaceInvader.name}}
+							</div>
+						</a>
+					</li>
+				{% endfor %}
+			{% else %}
+				<p>There is no space invader yet !</p>
+			{% endif %}
+		</ul>
+
+	</div>
+{% endblock %}
