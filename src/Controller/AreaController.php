@@ -17,6 +17,7 @@ class AreaController extends AbstractController
 //         $area = new Area;
 //
 //         $form = $this->createForm(AreaType::class, $area);
+//            ->add('save', SubmitType::class, ['label' => 'Add Area']);
 //
 //         $form->handleRequest($request);
 //

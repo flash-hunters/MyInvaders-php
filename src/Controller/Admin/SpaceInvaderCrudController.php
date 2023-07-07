@@ -8,7 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class SpaceInvaderCrudController extends AbstractCrudController
@@ -35,7 +35,7 @@ class SpaceInvaderCrudController extends AbstractCrudController
             NumberField::new('number'),
             TextField::new('status'),
             TextField::new('position'),
-            TextEditorField::new('comments'),
+            TextareaField::new('comments'),
             // TextField::new('imgSrc'),
             ImageField::new('imgSrc')
                 ->setBasePath('uploads/images/si/')
