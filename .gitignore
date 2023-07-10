@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -21,3 +20,7 @@
 ###< symfony/phpunit-bridge ###
 
 /public/uploads/images/si/*
+
+###> symfony/asset-mapper ###
+/public/assets/
+###< symfony/asset-mapper ###

@@ -1,9 +1,0 @@
-{% extends '@!EasyAdmin/crud/new.html.twig' %}
-
-{% block new_form %}
-	{{ form_start(new_form) }}
-	{{ form_row(new_form.flashUser) }}
-	{{ form_row(new_form.spaceInvader) }}
-	{{ form_row(new_form.flashDate, {'attr': {'step': 1}}) }}
-	{{ form_end(new_form) }}
-{% endblock %}

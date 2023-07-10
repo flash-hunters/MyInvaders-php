@@ -1,9 +1,0 @@
-{% extends '@!EasyAdmin/crud/edit.html.twig' %}
-
-{% block edit_form %}
-	{{ form_start(edit_form) }}
-	{{ form_row(edit_form.flashUser) }}
-	{{ form_row(edit_form.spaceInvader) }}
-	{{ form_row(edit_form.flashDate, {'attr': {'step': 1}}) }}
-	{{ form_end(edit_form) }}
-{% endblock %}

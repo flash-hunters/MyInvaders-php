@@ -18,19 +18,17 @@ class FlashCrudController extends AbstractCrudController
         return Flash::class;
     }
 
-    public function createEntity(string $entityFqcn)
+    public function createEntity(string $entityFqcn): Flash
     {
         $flash = new Flash();
         $flash->setFlashDate(now());
         return $flash;
     }
-    
+
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setDateTimeFormat('dd/MM/yyyy HH:mm:ss')
-            ->overrideTemplate('crud/new', '/bundles/EasyAdminBundle/crud/new_flash.html.twig')
-            ->overrideTemplate('crud/edit', '/bundles/EasyAdminBundle/crud/edit_flash.html.twig');
+            ->setDateTimeFormat('medium', 'medium');
     }
 
     public function configureFields(string $pageName): iterable
@@ -38,8 +36,8 @@ class FlashCrudController extends AbstractCrudController
         return [
             AssociationField::new('flashUser')->autocomplete(),
             AssociationField::new('spaceInvader')->autocomplete(),
-            DateTimeField::new('flashDate')
+            DateTimeField::new('flashDate')->setFormTypeOption('with_seconds', true),
         ];
     }
-    
+
 }
